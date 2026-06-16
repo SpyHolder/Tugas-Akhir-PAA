@@ -64,7 +64,9 @@ def _bez(p0, p1, p2, steps=12):
                      u*u*p0[1]+2*u*t*p1[1]+t*t*p2[1]))
     return pts
 
-
+# Fungsi path visualization: mengubah jalur grid A* menjadi kurva Bezier
+# Menggunakan rumus Bezier kuadratik: B(t) = (1-t)^2*P0 + 2(1-t)*t*P1 + t^2*P2
+# Setiap tikungan diperhalus dengan 12 titik sampel agar jalur terlihat natural
 def build_world_path(grid, tile_path, tile_size):
     """Convert A* tile path into smooth world-space Bézier polyline."""
     if not tile_path:
