@@ -7,7 +7,9 @@ import heapq
 from collections import deque
 from config import EMPTY, OPPOSITE, DIR_DELTA, get_ports
 
-
+# Fungsi A* pathfinding + visualisasi explored nodes
+# explored = set() menyimpan semua node yang dikunjungi selama pencarian
+# Data explored dikembalikan untuk divisualisasikan sebagai overlay di peta
 def astar(grid, start, goal):
     """A* on road network using Manhattan distance heuristic.
     Returns (path, explored) or (None, explored)."""
