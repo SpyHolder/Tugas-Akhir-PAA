@@ -130,6 +130,9 @@ def draw_tile(s, x, y, tt, rot):
 # ═══════════════════════════════════════
 # MINIMAP
 # ═══════════════════════════════════════
+# Fungsi minimap: membangun representasi visual peta dalam ukuran kecil
+# Menggunakan transformasi scaling 2D: sc = sz / max(cols, rows)
+# Setiap koordinat tile dikalikan sc agar proporsional di layar minimap
 def build_minimap(grid, asset_grid=None, path=None, sz=180):
     cols, rows = grid.cols, grid.rows
     sc = sz / max(cols, rows)
